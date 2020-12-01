@@ -1,6 +1,11 @@
-const assertEqual = require('../assertEqual');
+const assert = require('chai').assert;
 const tail = require('../tail');
 
-const words = ["Yo Yo", "Lighthouse", "Labs"];
-tail(words); 
-assertEqual(words.length, 2);
+describe("#tail", () => {
+  it("returns 3 for [1, 2, 3]", () => {
+    assert.strictEqual(tail([1, 2, 3]), 3);
+  });
+  it("returns '5' for ['5']", () => {
+    assert.strictEqual(tail(['5']), '5'); 
+  });
+});
